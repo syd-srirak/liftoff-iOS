@@ -40,14 +40,14 @@ class LaunchDetailViewController: UIViewController {
         viewModel.launch.subscribe(onNext: { [weak self] launch in
             guard let self = self, launch.missionName.count > 0 else { return }
             self.setupUI(from: launch)
-        }, onError: { error in
+        }, onError: { _ in
             self.stackView.isHidden = true
         }).disposed(by: disposeBag)
 
         viewModel.rocket.subscribe(onNext: { [weak self] rocket in
             guard let self = self, rocket.rocketName.count > 0 else { return }
             self.setupUI(from: rocket)
-        }, onError: { error in
+        }, onError: { _ in
             self.stackView.isHidden = true
         }).disposed(by: disposeBag)
     }

@@ -64,13 +64,6 @@ class LaunchesViewController: UIViewController {
         }
     }
 
-    func filteredSectionModels(sectionModels: [SectionModel<String, LaunchModel>], filter: String) -> [SectionModel<String, LaunchModel>] {
-        guard !filter.isEmpty else { return sectionModels }
-        return sectionModels.map {
-            SectionModel(model: $0.model, items: $0.items.filter { $0.launchSuccess == true })
-        }
-    }
-
     // MARK: - Activity View
 
     @available(iOS 13.0, *)
@@ -97,4 +90,3 @@ class LaunchesViewController: UIViewController {
         viewModel.filter(by: LaunchFilter(rawValue: sender.selectedSegmentIndex))
     }
 }
-

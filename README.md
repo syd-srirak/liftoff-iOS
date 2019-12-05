@@ -8,7 +8,7 @@ MVVM-C was my choice for architecture. Model-View-ViewModel is a simple yet flex
 
 ## Design Patterns
 
-With the help of RxSwift and friends, I was able to implement this project reactively. Inherently from the observer design pattern, Rx utilizes asynchronous streams as inputs and outputs, effectively binding UI to data streams so that it can update seamlessly when new information arrives, which in this case will be from our SpaceX network calls.
+With the help of RxSwift and friends, I was able to implement this project reactively. Inherently from the observer design pattern, Rx utilizes asynchronous streams as inputs and outputs. Rx binds UI to data streams so that it can update seamlessly when new information arrives, which in this case will be from our SpaceX network calls.
 
 The Delegation Pattern is being used for navigation, combined with coordinators this provides a clean solution for handling navigation logic elsewhere from the controller itself.
 
