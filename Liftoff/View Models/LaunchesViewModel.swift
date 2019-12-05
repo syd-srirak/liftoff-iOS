@@ -11,15 +11,11 @@ import RxCocoa
 import RxDataSources
 
 enum LaunchSortingOrder: Int {
-    case latest
-    case earliest
-    case alphabetically
-    case alphabeticallyReversed
+    case latest, earliest, alphabetically, alphabeticallyReversed
 }
 
 enum LaunchFilter: Int {
-    case all
-    case successOnly
+    case all, successOnly
 }
 
 class LaunchesViewModel {
