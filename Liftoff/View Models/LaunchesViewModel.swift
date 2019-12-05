@@ -36,6 +36,7 @@ class LaunchesViewModel {
                 let launches = try decoder.decode([LaunchModel].self, from: data)
                 self.originalLaunches = launches
                 self.currentLaunches = launches
+                self.sort(latestFirst: true)
                 self.updateSections()
             } catch let error {
                print("Error:", error.localizedDescription)
@@ -74,7 +75,7 @@ class LaunchesViewModel {
         }
     }
 
-    func sort(latestFirst: Bool) {
+    private func sort(latestFirst: Bool) {
         if latestFirst {
             currentLaunches = currentLaunches.sorted { $0.launchDate > $1.launchDate }
         } else {
@@ -83,7 +84,7 @@ class LaunchesViewModel {
         updateSections(ascending: latestFirst == false)
     }
 
-    func sort(alphabetically: Bool) {
+    private func sort(alphabetically: Bool) {
         if alphabetically {
             currentLaunches = currentLaunches.sorted { $0.missionName < $1.missionName }
         } else {

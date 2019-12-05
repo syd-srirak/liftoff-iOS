@@ -6,7 +6,6 @@
 //  Copyright © 2019 Syd Srirak. All rights reserved.
 //
 
-import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
