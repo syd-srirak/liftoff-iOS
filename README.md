@@ -1,2 +1,27 @@
-# liftoff-iOS
-iOS app that displays SpaceX data
+# Liftoff 🚀
+
+### An iOS app that displays SpaceX's Launches and Rockets
+
+## Architecture
+
+![Image of MVVM-C](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwi_wfa-q57mAhUr7HMBHeMZARwQjRx6BAgBEAQ&url=https%3A%2F%2Fdzone.com%2Farticles%2Fmvvm-c-with-swift-1&psig=AOvVaw2V-tV9i5crzILKOxUjg-SX&ust=1575629485592414)
+
+MVVM-C was my choice for architecture. Model-View-ViewModel is a simple yet flexible way of establishing data binding whilst keeping the UI and business logic separate. MVVM alone, however, doesn't give us a clean way to manage routing. The coordinators introduced helps us maintain separation of concerns and ensures the controller focuses on managing the views UI output and input only, navigation and ViewModel creation are handled by the coordinator.
+
+## Design Patterns
+
+With the help of RxSwift and friends, I was able to implement this project reactively. Inherently from the observer design pattern, Rx utilizes asynchronous streams as inputs and outputs, effectively binding UI to data streams so that it can update seamlessly when new information has arrived, which in this case will be from our SpaceX network calls.
+
+The Delegation Pattern is being used for navigation, combined with coordinators this provides a clean solution for handling navigation logic elsewhere from the controller itself.
+
+## Assumptions
+
+The API call to `https://api.spacexdata.com/v3/launches/`{flightNumber} returned almost the same results as what was available in launches. However, as the requirements specified a further API call I did so assuming this endpoint may have updated data.
+
+A cell view model could have been added to further abstract the launch model from the UI but the majority of properties from the LaunchModel already needed to be displayed in the cell or to passed through to fetch the detail.
+
+The delegation pattern used in the coordinators for navigation required a stronger retain cycle, hence a local variable is being set where the coordinators are being created, otherwise the delegate = nil in the places where it's trying to be used
+
+## Demo
+
+![](demo.gif)
