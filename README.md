@@ -21,3 +21,9 @@ A cell view model could have been added to further abstract the launch model fro
 The delegation pattern used in the coordinators for navigation required a stronger retain cycle, hence a local variable is being set where the coordinators are being created, otherwise the delegate = nil in the places where it's trying to be used
 
 I've gone with the assumption that the user would like to see the initial list displaying all launches and ordered by latest.
+
+### Further Work
+
+A way to reload the launches could be added. A table view pull to refresh or a button somewhere that calls the retrieveLaunches() function.
+
+Error handling for failed API calls. An alert could be shown to the user describing what went wrong in a meaningful way.
