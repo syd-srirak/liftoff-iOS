@@ -21,8 +21,8 @@ enum LaunchFilter: Int {
 class LaunchesViewModel {
     private let launchesURLString = "https://api.spacexdata.com/v3/launches"
 
-    var originalLaunches: [LaunchModel] = []
-    var currentLaunches: [LaunchModel] = []
+    private var originalLaunches: [LaunchModel] = []
+    private var currentLaunches: [LaunchModel] = []
     let sections: BehaviorSubject<[SectionModel<String, LaunchModel>]> = BehaviorSubject(value: [])
 
     private var launchSortingOrder: LaunchSortingOrder = .latest
@@ -36,7 +36,7 @@ class LaunchesViewModel {
                 let launches = try decoder.decode([LaunchModel].self, from: data)
                 self.originalLaunches = launches
                 self.currentLaunches = launches
-                self.sort(latestFirst: true)
+                self.sort(by: self.launchSortingOrder)
                 self.updateSections()
             } catch let error {
                print("Error:", error.localizedDescription)
