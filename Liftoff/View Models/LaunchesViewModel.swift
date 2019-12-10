@@ -23,7 +23,7 @@ class LaunchesViewModel {
 
     private var originalLaunches: [LaunchModel] = []
     private var currentLaunches: [LaunchModel] = []
-    let sections: BehaviorSubject<[SectionModel<String, LaunchModel>]> = BehaviorSubject(value: [])
+    let sections: PublishSubject<[SectionModel<String, LaunchModel>]> = PublishSubject()
 
     private var launchSortingOrder: LaunchSortingOrder = .latest
 
