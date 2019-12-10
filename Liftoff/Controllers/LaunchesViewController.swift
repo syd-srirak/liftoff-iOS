@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-protocol LaunchesNavigationDelegate: class {
+protocol LaunchesNavigationDelegate {
     func navigateToLaunchDetails(missionName: String, flightNumber: Int, rocketId: String)
 }
 
@@ -24,7 +24,7 @@ class LaunchesViewController: UIViewController {
     var viewModel: LaunchesViewModel!
     private let disposeBag = DisposeBag()
 
-    weak var delegate: LaunchesNavigationDelegate?
+    var delegate: LaunchesNavigationDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

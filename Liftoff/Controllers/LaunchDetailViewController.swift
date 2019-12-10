@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol LaunchDetailNavigationDelegate: class {
+protocol LaunchDetailNavigationDelegate {
     func presentRocketInformation(url: URL)
 }
 
@@ -30,7 +30,7 @@ class LaunchDetailViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let dateFormatter = DateFormatter()
 
-    weak var delegate: LaunchDetailNavigationDelegate?
+    var delegate: LaunchDetailNavigationDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,7 +16,7 @@ struct Rocket: Decodable {
     }
 }
 
-struct Links: Codable {
+struct Links: Decodable {
     let missionPatch: String?
 
     enum CodingKeys: String, CodingKey {
