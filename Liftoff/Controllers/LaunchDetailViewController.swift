@@ -29,6 +29,7 @@ class LaunchDetailViewController: UIViewController {
     var viewModel: LaunchDetailViewModel!
     private let disposeBag = DisposeBag()
     private let dateFormatter = DateFormatter()
+    private var wikipediaURLString: String?
 
     var delegate: LaunchDetailNavigationDelegate?
 
@@ -47,6 +48,7 @@ class LaunchDetailViewController: UIViewController {
         viewModel.rocket.subscribe(onNext: { [weak self] rocket in
             guard let self = self, rocket.rocketName.count > 0 else { return }
             self.setupUI(from: rocket)
+            self.wikipediaURLString = rocket.wikipedia
         }, onError: { _ in
             self.stackView.isHidden = true
         }).disposed(by: disposeBag)
@@ -120,7 +122,7 @@ class LaunchDetailViewController: UIViewController {
     // MARK: - IBAction
 
     @IBAction func moreInformationButtonPressed(_ sender: Any) {
-        guard let url = try? URL(string: viewModel.rocket.value().wikipedia) else { return }
+        guard let urlString = wikipediaURLString, let url = URL(string: urlString) else { return }
         delegate?.presentRocketInformation(url: url)
     }
 }

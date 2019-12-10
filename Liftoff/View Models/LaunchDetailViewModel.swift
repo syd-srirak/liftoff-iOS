@@ -14,29 +14,8 @@ class LaunchDetailViewModel {
     private let rocketURLString = "https://api.spacexdata.com/v3/rockets/"
     private let decoder = JSONDecoder()
 
-    var launch: BehaviorSubject<LaunchModel> = BehaviorSubject(value: LaunchModel(flightNumber: 0,
-                                                                                  missionName: "",
-                                                                                  launchYear: "",
-                                                                                  launchDate: "",
-                                                                                  launchSuccess: nil,
-                                                                                  rocket: Rocket(id: ""),
-                                                                                  links: Links(missionPatch: nil),
-                                                                                  details: nil))
-    
-    var rocket: BehaviorSubject<RocketModel> = BehaviorSubject(value: RocketModel(id: 0,
-                                                                                  active: true,
-                                                                                  stages: 0,
-                                                                                  boosters: 0,
-                                                                                  costPerLaunch: 0,
-                                                                                  successRatePercent: 0,
-                                                                                  firstFlight: "",
-                                                                                  country: "",
-                                                                                  company: "",
-                                                                                  wikipedia: "",
-                                                                                  description: "",
-                                                                                  rocketId: "",
-                                                                                  rocketName: "",
-                                                                                  rocketType: ""))
+    var launch: PublishSubject<LaunchModel> = PublishSubject()
+    var rocket: PublishSubject<RocketModel> = PublishSubject()
 
     init(flightNumber: Int, rocketId: String) {
         self.retrieveLaunchDetails(with: flightNumber)
