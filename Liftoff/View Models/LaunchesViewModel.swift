@@ -55,9 +55,10 @@ class LaunchesViewModel {
             sortedLaunches = groupedArray.sorted { $0.key > $1.key }
         }
 
-        for sortedLaunch in sortedLaunches {
-            sectionModels.append(SectionModel(model: sortedLaunch.key, items: sortedLaunch.value))
-        }
+        sortedLaunches.forEach({ launch in
+            sectionModels.append(SectionModel(model: launch.key, items: launch.value))
+        })
+
         sections.onNext(sectionModels)
     }
 

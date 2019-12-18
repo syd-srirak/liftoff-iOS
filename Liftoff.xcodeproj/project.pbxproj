@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D248FB623A05A06002AA7DC /* LiftoffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D248FB523A05A06002AA7DC /* LiftoffTests.swift */; };
 		1DA8C8E223960CBF008C164C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C8E123960CBF008C164C /* AppDelegate.swift */; };
 		1DA8C8E423960CBF008C164C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C8E323960CBF008C164C /* SceneDelegate.swift */; };
 		1DA8C8E623960CBF008C164C /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C8E523960CBF008C164C /* LaunchesViewController.swift */; };
@@ -29,7 +30,20 @@
 		760600F388AF189359519DCC /* Pods_Liftoff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00730652CB188CB21C0BB30 /* Pods_Liftoff.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1D248FB823A05A06002AA7DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1DA8C8D623960CBF008C164C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DA8C8DD23960CBF008C164C;
+			remoteInfo = Liftoff;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1D248FB323A05A06002AA7DC /* LiftoffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiftoffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D248FB523A05A06002AA7DC /* LiftoffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftoffTests.swift; sourceTree = "<group>"; };
+		1D248FB723A05A06002AA7DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DA8C8DE23960CBF008C164C /* Liftoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA8C8E123960CBF008C164C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA8C8E323960CBF008C164C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +71,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1D248FB023A05A05002AA7DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DA8C8DB23960CBF008C164C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,10 +98,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		1D248FB423A05A06002AA7DC /* LiftoffTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D248FB523A05A06002AA7DC /* LiftoffTests.swift */,
+				1D248FB723A05A06002AA7DC /* Info.plist */,
+			);
+			path = LiftoffTests;
+			sourceTree = "<group>";
+		};
 		1DA8C8D523960CBF008C164C = {
 			isa = PBXGroup;
 			children = (
 				1DA8C8E023960CBF008C164C /* Liftoff */,
+				1D248FB423A05A06002AA7DC /* LiftoffTests */,
 				1DA8C8DF23960CBF008C164C /* Products */,
 				023A0CE1694CC8290EBF3D44 /* Pods */,
 				299FC1438454EBDFA9D8F9A2 /* Frameworks */,
@@ -91,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				1DA8C8DE23960CBF008C164C /* Liftoff.app */,
+				1D248FB323A05A06002AA7DC /* LiftoffTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +213,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1D248FB223A05A05002AA7DC /* LiftoffTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D248FBC23A05A06002AA7DC /* Build configuration list for PBXNativeTarget "LiftoffTests" */;
+			buildPhases = (
+				1D248FAF23A05A05002AA7DC /* Sources */,
+				1D248FB023A05A05002AA7DC /* Frameworks */,
+				1D248FB123A05A05002AA7DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D248FB923A05A06002AA7DC /* PBXTargetDependency */,
+			);
+			name = LiftoffTests;
+			productName = LiftoffTests;
+			productReference = 1D248FB323A05A06002AA7DC /* LiftoffTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1DA8C8DD23960CBF008C164C /* Liftoff */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DA8C8F223960CC2008C164C /* Build configuration list for PBXNativeTarget "Liftoff" */;
@@ -210,6 +260,10 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Syd Srirak";
 				TargetAttributes = {
+					1D248FB223A05A05002AA7DC = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 1DA8C8DD23960CBF008C164C;
+					};
 					1DA8C8DD23960CBF008C164C = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -229,11 +283,19 @@
 			projectRoot = "";
 			targets = (
 				1DA8C8DD23960CBF008C164C /* Liftoff */,
+				1D248FB223A05A05002AA7DC /* LiftoffTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1D248FB123A05A05002AA7DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DA8C8DC23960CBF008C164C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -289,6 +351,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1D248FAF23A05A05002AA7DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D248FB623A05A06002AA7DC /* LiftoffTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DA8C8DA23960CBF008C164C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,6 +384,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1D248FB923A05A06002AA7DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1DA8C8DD23960CBF008C164C /* Liftoff */;
+			targetProxy = 1D248FB823A05A06002AA7DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		1DA8C8E723960CBF008C164C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -334,6 +412,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1D248FBA23A05A06002AA7DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KTTBXJDW33;
+				INFOPLIST_FILE = LiftoffTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sydsrirak.LiftoffTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Liftoff.app/Liftoff";
+			};
+			name = Debug;
+		};
+		1D248FBB23A05A06002AA7DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KTTBXJDW33;
+				INFOPLIST_FILE = LiftoffTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sydsrirak.LiftoffTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Liftoff.app/Liftoff";
+			};
+			name = Release;
+		};
 		1DA8C8F023960CC2008C164C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -491,6 +609,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D248FBC23A05A06002AA7DC /* Build configuration list for PBXNativeTarget "LiftoffTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D248FBA23A05A06002AA7DC /* Debug */,
+				1D248FBB23A05A06002AA7DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1DA8C8D923960CBF008C164C /* Build configuration list for PBXProject "Liftoff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -67,7 +67,8 @@ class LaunchDetailViewController: UIViewController {
             if let missionPatch = launch.links.missionPatch, let patchURL = URL(string: missionPatch) {
                 self.activityIndicator.startAnimating()
                 self.rocketImageContainer.isHidden = false
-                self.rocketImageView.load(url: patchURL, completion: { success in
+                self.rocketImageView.load(url: patchURL, completion: { [weak self] success in
+                    guard let self = self else { return }
                     self.activityIndicator.stopAnimating()
                     if success {
                         self.rocketImageContainer.isHidden = false
